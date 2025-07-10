@@ -3,11 +3,11 @@ import React from 'react';
 
 const ContactUs: React.FC = () => {
     return (
-        <div>
+        <div id='footer'>
             <h3 className="text-xl font-bold dark:text-white  mb-4 text-dark">Contact Us</h3>
             <ul className='dark:text-gray-300 text-paragraph'>
                 <li className="flex items-center mb-2">
-                    <span>Suite 100, Accra, Ghana</span>
+                    <span>Achimota, Accra, Ghana</span>
                 </li>
                 <li className="flex items-center mb-2">
                     <span>{"Phone: "}</span>

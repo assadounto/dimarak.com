@@ -103,7 +103,7 @@ export default function WhoWeAre() {
 
         <hr className="border-gray-300 dark:border-gray-600 mb-7" />
 
-        <Button href="/discover-more" bg={true}>
+        <Button href="/projects" bg={true}>
           Discover More
         </Button>
       </motion.div>

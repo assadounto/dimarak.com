@@ -22,7 +22,7 @@ const NavBar: React.FC = () => {
             <div className="hidden md:flex flex-1 justify-center">
                 <NavLinks />
             </div>
-            <div className='hidden md:block'> <SignInSignUpLinks /></div>
+            {/* <div className='hidden md:block'> <SignInSignUpLinks /></div> */}
             <Drawer isOpen={drawerOpen} toggleDrawer={toggleDrawer} />
         </nav>
     );

@@ -3,9 +3,9 @@ import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 
 const navLinks = [
-    { label: 'Home', link: '/' },
-    { label: 'About', link: '/about' },
-    { label: 'Services', link: '/services' },
+  { label: "Home", link: "/" },
+  { label: "Projects", link: "/projects" },
+  { label: "About", link: "/about" },
 ];
 
 interface NavLinksProps {

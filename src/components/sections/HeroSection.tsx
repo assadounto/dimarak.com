@@ -91,7 +91,7 @@ const HeroSection: React.FC = () => {
             animate="visible"
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <Button href="/contact" bg>
+            <Button href="/#footer" bg>
               Contact Us
             </Button>
           </motion.div>
@@ -101,7 +101,7 @@ const HeroSection: React.FC = () => {
             animate="visible"
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <Button href="/services">Our Services</Button>
+            <Button href="/projects">Our Portfolio</Button>
           </motion.div>
         </div>
         

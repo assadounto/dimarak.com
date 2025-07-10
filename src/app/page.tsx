@@ -12,7 +12,7 @@ export default function Home() {
       {/* <ScrollingTextSection /> */}
       <ServicesSection />
       <WhoWeAre />
-      <WhyChooseUs />
+      {/* <WhyChooseUs /> */}
       {/* <Testimonial /> */}
     </>
   );

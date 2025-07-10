@@ -10,7 +10,7 @@ const About: React.FC = () => {
     // Team data
     const team = [
         {
-            name: 'Michael Ankomah Idrisu',
+            name: 'Michael Kwasi Abrefa',
             position: 'CEO & Co-Founder',
             imageSrc: '/mike.jpeg',
             description: 'Michael is a seasoned entrepreneur with a passion for building innovative solutions that drive business growth. He is dedicated to helping local businesses thrive in the digital age.',

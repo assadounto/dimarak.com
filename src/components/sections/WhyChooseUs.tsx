@@ -16,7 +16,6 @@ const fadeInRight = {
 const WhyChooseUs = () => {
   return (
     <section className="flex flex-col md:flex-row items-center justify-between py-12 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-
       {/* Left Text Section with fadeInLeft animation */}
       <motion.div
         className="md:w-1/2 w-full px-6 md:px-12 text-left"
@@ -34,7 +33,9 @@ const WhyChooseUs = () => {
           <br /> That Matter
         </h3>
         <p className="text-gray-600 dark:text-gray-300 mb-8">
-          Building robust, high-performing websites with cutting-edge technology, delivering seamless functionality and exceptional user experiences.
+          Building robust, high-performing websites with cutting-edge
+          technology, delivering seamless functionality and exceptional user
+          experiences.
         </p>
 
         <ul className="space-y-6 text-gray-800 dark:text-gray-100">
@@ -81,10 +82,11 @@ const WhyChooseUs = () => {
               Streamlining Processes <br /> for Business Efficiency
             </p>
             <p className="mt-4 mb-6 text-sm sm:text-sm lg:text-base">
-              Our advanced cybersecurity solutions help businesses safeguard critical data while optimizing operational workflows.
+              Our advanced cybersecurity solutions help businesses safeguard
+              critical data while optimizing operational workflows.
             </p>
 
-            <Button href="/discover-more" bg={true}>
+            <Button href="/projects" bg={true}>
               Discover More
             </Button>
           </div>
