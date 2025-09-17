@@ -5,6 +5,8 @@ Welcome to **Dimarak**, your partner in innovation, where creativity meets techn
 ## Our Mission
 At Dimarak, we strive to blend artistry and technology, creating exceptional experiences for our clients. Whether through intelligent software systems, advanced electronics, or captivating artwork, we’re committed to making an impact across multiple industries.
 
+
+
 ## What We Offer
 
 
