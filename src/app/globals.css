@@ -10,59 +10,92 @@
 /* =========================
    DIMARAK BRAND THEME
    ========================= */
-@layer base { 
-:root {
-  --background: 164 40% 99%; --foreground: 174 50% 8%;
-  --muted: 164 22% 94%; --muted-foreground: 170 12% 34%;
-  --card: 164 38% 98%; --card-foreground: 174 50% 10%;
-  --border: 170 16% 86%; --input: 170 16% 86%;
+@layer base {
+  :root {
+    /* Surfaces (bright, airy) */
+    --background: 18 80% 99%;
+    --foreground: 18 70% 8%;
 
-  --primary: 160 92% 38%;           /* Emerald */
-  --primary-foreground: 0 0% 100%;
-  --secondary: 8 90% 58%;           /* Coral */
-  --secondary-foreground: 0 0% 100%;
+    --muted: 18 30% 94%;
+    --muted-foreground: 18 18% 34%;
 
-  --accent: 160 100% 96%;
-  --accent-foreground: 160 40% 22%;
+    --card: 18 72% 98%;
+    --card-foreground: 18 70% 10%;
 
-  --destructive: 0 84% 58%; --destructive-foreground: 0 0% 100%;
-  --ring: 160 92% 38%;
-  --radius: 0.8rem;
+    --border: 18 22% 86%;
+    --input: 18 22% 86%;
 
-  --chart-1: 160 92% 38%;
-  --chart-2: 8 90% 58%;
-  --chart-3: 43 96% 56%;   /* amber */
-  --chart-4: 201 96% 44%;  /* blue */
-  --chart-5: 286 78% 58%;  /* purple */
-}
-.dark {
-  --background: 174 30% 6%; --foreground: 0 0% 96%;
-  --muted: 174 18% 14%; --muted-foreground: 170 14% 72%;
-  --card: 174 28% 8%; --card-foreground: 0 0% 98%;
-  --border: 170 20% 18%; --input: 170 20% 18%;
+    /* Brand — PRIMARY = #FF4223 (HSL ≈ 8 100% 57%) */
+    --primary: 8 100% 57%;
+    --primary-foreground: 0 0% 100%;
 
-  --primary: 160 96% 46%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 8 96% 62%;
-  --secondary-foreground: 0 0% 8%;
+    /* Secondary — cool counterpoint to the heat of primary */
+    --secondary: 188 100% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-  --accent: 160 36% 20%; --accent-foreground: 0 0% 96%;
-  --destructive: 0 82% 60%; --destructive-foreground: 0 0% 100%;
-  --ring: 160 96% 46%;
+    /* Accent — punchy lime for highlights/CTAs */
+    --accent: 92 95% 45%;
+    --accent-foreground: 0 0% 8%;
 
-  --chart-1: 160 96% 46%;
-  --chart-2: 8 96% 62%;
-  --chart-3: 43 96% 58%;
-  --chart-4: 201 100% 52%;
-  --chart-5: 286 80% 62%;
-}
+    /* Status */
+    --destructive: 0 84% 58%;
+    --destructive-foreground: 0 0% 100%;
 
+    /* Misc */
+    --ring: 8 100% 57%;
+    --radius: 0.8rem;
+
+    /* Charts — high-chroma set that plays well with the brand */
+    --chart-1: 8 100% 57%;    /* primary */
+    --chart-2: 188 100% 50%;  /* cyan */
+    --chart-3: 46 96% 54%;    /* amber */
+    --chart-4: 142 72% 44%;   /* green */
+    --chart-5: 326 86% 62%;   /* hot pink */
+  }
+
+  .dark {
+    /* Surfaces (rich, not muddy) */
+    --background: 18 16% 6%;
+    --foreground: 0 0% 96%;
+
+    --muted: 18 18% 14%;
+    --muted-foreground: 18 12% 72%;
+
+    --card: 18 16% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --border: 18 14% 18%;
+    --input: 18 14% 18%;
+
+    /* Brand (lift lightness a bit for dark) */
+    --primary: 8 100% 64%;
+    --primary-foreground: 0 0% 6%;
+    --secondary: 188 100% 58%;
+    --secondary-foreground: 0 0% 6%;
+
+    --accent: 92 95% 52%;
+    --accent-foreground: 0 0% 6%;
+
+    --destructive: 0 92% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --ring: 8 100% 64%;
+
+    /* Charts (slightly lifted lightness in dark mode) */
+    --chart-1: 8 100% 64%;
+    --chart-2: 188 100% 58%;
+    --chart-3: 46 100% 58%;
+    --chart-4: 142 78% 50%;
+    --chart-5: 326 90% 66%;
+  }
 
   * { @apply border-border; }
   body { @apply box-border bg-background text-foreground; }
 }
 
-/* Shadows & misc utilities (unchanged) */
+/* =========================
+   Shadows & misc utilities
+   ========================= */
 @layer utilities {
   .shadow-card-dark {
     box-shadow:
@@ -81,12 +114,20 @@
   .min-h-screen { min-height: 100vh; min-height: 100dvh; }
   .h-screen { height: 100vh; height: 100dvh; }
 
-  /* Brand gradients using new tokens */
+  /* Brand gradients */
   .bg-brand-gradient {
     background-image: linear-gradient(
       135deg,
       hsl(var(--primary)) 0%,
       hsl(var(--secondary)) 100%
+    );
+  }
+  .bg-brand-gradient-3 {
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--secondary)) 52%,
+      hsl(var(--accent)) 100%
     );
   }
   .text-brand-gradient {
@@ -98,5 +139,48 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+
+  /* =========================
+     Animated conic border
+     Usage:
+       <div class="relative brand-conic-border p-[2px] rounded-2xl">
+         <div class="rounded-2xl bg-card ..."> ... </div>
+       </div>
+     Or as absolute ring behind a card:
+       <div class="relative">
+         <div class="brand-conic-border absolute -inset-[2px] rounded-2xl"></div>
+         <Card class="relative rounded-2xl">...</Card>
+       </div>
+     ========================= */
+  .brand-conic-border {
+    position: relative;
+    pointer-events: none;
+    background: conic-gradient(
+      from 0deg,
+      hsl(var(--primary)),
+      hsl(var(--secondary)),
+      hsl(var(--accent)),
+      hsl(var(--primary))
+    );
+    animation: brand-spin 12s linear infinite;
+    /* Create a ring by showing only the padding area */
+    padding: 2px; /* tweak thickness */
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+  }
+
+  @keyframes brand-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .brand-conic-border { animation: none; }
   }
 }

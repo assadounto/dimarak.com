@@ -13,10 +13,10 @@ import { AnalyticsLoader } from '@/components/common/analytics-loader';
 import { CookieConsentBanner } from '@/components/common/cookie-consent';
 import SiteHeader from '@/components/navigation/site-header';
 import { SiteFooter } from '@/components/navigation/site-footer';
-
-export const metadata: Metadata = {
-  title: 'XONBAY: Ecommerce excellence',
-  description: 'All in one customer friendly platform'
+export const metadata = {
+  title: "Dimarak",
+  description:
+    "Dimarak is a Ghana‑rooted, globally delivering services company for software, AI, and IoT. We design, build, and scale dependable platforms.",
 };
 
 const lato = Lato({

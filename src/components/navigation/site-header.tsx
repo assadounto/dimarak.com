@@ -11,12 +11,10 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
 import { ModeToggle } from "@/components/mode-toggle";
-import { Menu, ChevronDown, Phone, Mail } from "lucide-react";
+import { Menu, Phone, Mail } from "lucide-react";
 import { brand } from "@/constants/brand";
 
 const navPrimary = [
-  { label: "Services", href: "/services" },
-  { label: "Solutions", href: "/solutions" },
   { label: "Industries", href: "/industries" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Pricing", href: "/pricing" },
@@ -41,10 +39,12 @@ function NavLink({
   return (
     <Link
       href={href}
-      className={
-        "rounded-md px-3 py-2 text-sm font-medium hover:bg-accent/50 transition " +
-        (active ? "bg-accent/50 text-foreground" : "text-muted-foreground")
-      }
+      aria-current={active ? "page" : undefined}
+      className={[
+        "rounded-md px-3 py-2 text-sm font-medium transition",
+        "hover:bg-accent/50",
+        active ? "bg-accent/50 text-foreground" : "text-muted-foreground",
+      ].join(" ")}
     >
       {children}
     </Link>
@@ -52,38 +52,41 @@ function NavLink({
 }
 
 export default function SiteHeader() {
+  const siteName = brand?.name ?? "Brand";
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/60 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+      {/* Skip link */}
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:inset-x-0 focus:top-2 focus:z-50 focus:m-2 focus:rounded-md focus:bg-accent/40 focus:p-2"
       >
         Skip to content
       </a>
+
       <div className="container h-14 md:h-16 flex items-center justify-between gap-3">
-        {/* Left: Brand */}
+        {/* Left: Brand + Primary Nav */}
         <div className="flex items-center gap-3">
-          <Link href="/" className="flex items-center gap-2">
-            {/* Use light/dark wordmarks if available */}
-            <span className="relative block h-6 w-auto">
+          <Link href="/" className="group flex items-center gap-2">
+            {/* Bigger logo */}
+            <span className="relative block h-8 w-auto md:h-9">
               <Image
-                src="/brand/logos/wordmark-dark.svg"
-                alt={brand.name}
+                src="/logos/mark.svg"
+                alt={siteName}
                 width={120}
-                height={24}
-                className="hidden dark:block h-6 w-auto"
-              />
-              <Image
-                src="/brand/logos/wordmark-light.svg"
-                alt={brand.name}
-                width={120}
-                height={24}
-                className="block dark:hidden h-6 w-auto"
+                height={36}
+                priority
+                className="h-full w-auto"
               />
             </span>
-            <span className="sr-only">{brand.name}</span>
+            {/* Visible brand name */}
+            <span className="hidden sm:inline-block text-base md:text-lg font-semibold tracking-tight">
+              {siteName}
+            </span>
           </Link>
+
           <Separator orientation="vertical" className="mx-1 hidden md:block" />
+
           <nav className="hidden md:flex items-center gap-1" aria-label="Main">
             {navPrimary.map((item) => (
               <NavLink key={item.href} href={item.href}>
@@ -93,7 +96,7 @@ export default function SiteHeader() {
           </nav>
         </div>
 
-        {/* Right: Actions */}
+        {/* Right: Secondary Nav + Actions */}
         <div className="hidden md:flex items-center gap-2">
           <nav className="hidden lg:flex items-center" aria-label="Secondary">
             {navSecondary.map((item) => (
@@ -102,7 +105,7 @@ export default function SiteHeader() {
               </NavLink>
             ))}
           </nav>
-        
+
           <ModeToggle />
           <Button asChild className="ml-1">
             <Link href="/contact">Contact</Link>
@@ -118,17 +121,22 @@ export default function SiteHeader() {
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
+
             <SheetContent side="right" className="w-[320px] sm:w-[380px]">
+              {/* Drawer header with consistent logo + name */}
               <div className="mt-2 flex items-center gap-2">
                 <Image
-                  src="/brand/logos/mark.svg"
-                  alt="Logo"
+                  src="/logos/mark.svg"
+                  alt={siteName}
                   width={24}
                   height={24}
+                  className="h-6 w-6"
                 />
-                <div className="text-sm font-medium">{brand.name}</div>
+                <div className="text-sm font-medium">{siteName}</div>
               </div>
+
               <Separator className="my-4" />
+
               <div className="grid gap-1">
                 {navPrimary.map((item) => (
                   <Link
@@ -140,7 +148,9 @@ export default function SiteHeader() {
                   </Link>
                 ))}
               </div>
+
               <Separator className="my-4" />
+
               <div className="grid gap-1">
                 {navSecondary.map((item) => (
                   <Link
@@ -158,14 +168,26 @@ export default function SiteHeader() {
                   Press Kit
                 </Link>
               </div>
+
               <Separator className="my-4" />
+
               <div className="grid gap-2">
                 <Button asChild>
                   <Link href="/contact">Contact</Link>
                 </Button>
-                <div className="text-xs text-muted-foreground">
-                  <div>{brand.phone}</div>
-                  <div>{brand.email}</div>
+                <div className="text-xs text-muted-foreground space-y-1">
+                  {brand?.phone && (
+                    <div className="flex items-center gap-1">
+                      <Phone className="h-3.5 w-3.5" />
+                      <span>{brand.phone}</span>
+                    </div>
+                  )}
+                  {brand?.email && (
+                    <div className="flex items-center gap-1">
+                      <Mail className="h-3.5 w-3.5" />
+                      <span>{brand.email}</span>
+                    </div>
+                  )}
                 </div>
               </div>
             </SheetContent>
