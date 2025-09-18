@@ -15,6 +15,7 @@ import { Menu, Phone, Mail } from "lucide-react";
 import { brand } from "@/constants/brand";
 
 const navPrimary = [
+  { label: "Services", href: "/services" },
   { label: "Industries", href: "/industries" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Pricing", href: "/pricing" },

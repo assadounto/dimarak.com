@@ -1,12 +1,11 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   CheckCircle2,
-  Lock,
-  Server,
   Terminal,
   Cpu,
   CircuitBoard,
@@ -42,9 +41,8 @@ export function Hero() {
       }}
       onMouseLeave={() => setSpot({ x: "50%", y: "50%" })}
     >
-      {/* ===== Cleaner background: subtle tint + fine grid (no loud gradient) ===== */}
+      {/* ===== Background: subtle interactive tint + fine grid ===== */}
       <div aria-hidden className="absolute inset-0 z-0">
-        {/* Soft interactive tint, but neutral */}
         <div
           className="absolute inset-0 transition-[background-position] duration-300"
           style={{
@@ -54,7 +52,6 @@ export function Hero() {
             `,
           }}
         />
-        {/* Fine grid lines with center fade */}
         <svg
           className="absolute inset-0 h-full w-full [mask-image:radial-gradient(ellipse_at_center,white,transparent_70%)]"
           xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +77,7 @@ export function Hero() {
 
       {/* ===== Content ===== */}
       <div className="relative z-10 container grid gap-12 py-14 md:grid-cols-2 md:py-20">
-        {/* Left: simple, direct copy */}
+        {/* Left: headline + bullets + ctas */}
         <div>
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
@@ -88,12 +85,15 @@ export function Hero() {
             transition={{ duration: 0.5 }}
             className="text-balance text-4xl md:text-6xl font-semibold tracking-tight"
           >
-            We build software <br className="hidden sm:block" />
-            and electronics that work.
+            <span className="text-brand-gradient">
+              We build software
+              <br className="hidden sm:block" />
+              and electronics that work.
+            </span>
           </motion.h1>
 
           <p className="mt-4 text-base text-muted-foreground">
-            Apps, APIs, and connected devices—designed, built, and supported
+            Apps, APIs, and connected devices — designed, built, and supported
             with clear SLAs.
           </p>
 
@@ -114,17 +114,22 @@ export function Hero() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild>
-              <a href="#contact">Request a proposal</a>
+              <Link href="#contact">Request a proposal</Link>
             </Button>
             <Button variant="outline" asChild>
-              <a href="#services">Explore services</a>
+              <Link href="#services">Explore services</Link>
             </Button>
           </div>
         </div>
 
         {/* Right: Tabs — Capabilities / Devices / KPIs / Process */}
-        <div className="relative">
-          <Card className="bg-card/90 border-border supports-[backdrop-filter]:bg-card/70 backdrop-blur">
+        <div className="relative group">
+          {/* Animated gradient ring behind the card */}
+          <div
+            aria-hidden
+            className="brand-conic-border absolute -inset-[2px] rounded-2xl opacity-100 group-hover:opacity-100 transition"
+          />
+          <Card className="relative rounded-2xl bg-card/90 border-border supports-[backdrop-filter]:bg-card/70 backdrop-blur">
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between gap-2">
                 <CardTitle className="text-base">What we ship</CardTitle>
@@ -138,7 +143,7 @@ export function Hero() {
             <CardContent>
               <Tabs defaultValue="capabilities" className="w-full">
                 <TabsList className="grid w-full grid-cols-4">
-                  <TabsTrigger value="capabilities">Capabilities</TabsTrigger>
+                  <TabsTrigger value="capabilities">Areas</TabsTrigger>
                   <TabsTrigger value="devices">Devices</TabsTrigger>
                   <TabsTrigger value="kpis">KPIs</TabsTrigger>
                   <TabsTrigger value="process">Process</TabsTrigger>
@@ -230,7 +235,7 @@ export function Hero() {
                   </div>
                 </TabsContent>
 
-                {/* Process (new) */}
+                {/* Process */}
                 <TabsContent value="process" className="mt-4">
                   <ol className="grid grid-cols-2 gap-3 text-sm text-muted-foreground">
                     <li className="rounded-md border border-border/60 p-3">
@@ -271,7 +276,7 @@ export function Hero() {
             </CardContent>
           </Card>
 
-          {/* Subtle glow behind card */}
+          {/* Soft glow behind the card (kept) */}
           <div className="pointer-events-none absolute -inset-[1px] -z-10 rounded-2xl bg-gradient-to-tr from-primary/15 via-secondary/15 to-primary/15 blur-lg" />
         </div>
       </div>
