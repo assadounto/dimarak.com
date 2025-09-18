@@ -1,46 +1,59 @@
-import React from "react";
-import type { Metadata } from "next";
-import { Nunito} from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "@/provider/ThemeProvider";
-import NavBar from "@/components/nav/NavBar";
-import Footer from "@/components/footer/Footer";
+// app/layout.tsx
+import { auth } from '@/lib/auth';
+import Providers from '@/components/layout/providers';
+import { Toaster } from '@/components/ui/sonner';
+import type { Metadata } from 'next';
+import { NuqsAdapter } from 'nuqs/adapters/next/app';
+import { Lato } from 'next/font/google';
+import NextTopLoader from 'nextjs-toploader';
+import './globals.css';
+import HelpFab from '@/components/help/HelpFab';
 
-
-
-
-const poppins = Nunito({ weight: [ '200', '300', '400', '500', '600', '700', '800', '900'], subsets: ["latin"] });
+import { AnalyticsLoader } from '@/components/common/analytics-loader';
+import { CookieConsentBanner } from '@/components/common/cookie-consent';
+import SiteHeader from '@/components/navigation/site-header';
+import { SiteFooter } from '@/components/navigation/site-footer';
 
 export const metadata: Metadata = {
-  title: 'Dimarak | Software Solutions',
-  description: 'Dimarak creates software solutions for businesses and individuals. We are a team of software engineers, designers, and product managers who are passionate about building digital products that people love to use.',
+  title: 'XONBAY: Ecommerce excellence',
+  description: 'All in one customer friendly platform'
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      
-      <body className={`${poppins.className}  dark:bg-dark  dark:text-white`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <NavBar />
-          <main className="pt-[30px]"> 
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['400', '700', '900'],
+  display: 'swap'
+});
 
-            {children}
-          </main>
-           <Footer/>
-        </ThemeProvider>
+export default async function RootLayout({
+  children
+}: {
+  children: React.ReactNode;
+}) {
+  const session = await auth();
+  console.log(session, 'session');
+
+  return (
+    <html lang="en" className={`${lato.className}`} suppressHydrationWarning>
+      <body className={""}>
+        <NextTopLoader showSpinner={false} />
+        <NuqsAdapter>
+          <Providers session={session}>
+            <Toaster />
+            <div className="bg-gray-50 dark:bg-black">
+              <div className="fixed left-0 right-0 top-0 z-50">
+                <SiteHeader />
+              </div>
+              <main className="max-w-8xl mx-auto w-full pt-[60px] md:px-0">
+                {children}
+              </main>
+            </div>
+            <SiteFooter />
+            <AnalyticsLoader />
+            <CookieConsentBanner />
+          </Providers>
+        </NuqsAdapter>
       </body>
     </html>
   );
 }
-
-

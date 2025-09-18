@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "APP6DDRU24.com.xonbay",
+        "paths": ["*"]
+      }
+    ]
+  },
+  "activitycontinuation": {
+    "apps": ["APP6DDRU24.com.xonbay"]
+  },
+  "webcredentials": {
+    "apps": ["APP6DDRU24.com.xonbay"]
+  }
+}
