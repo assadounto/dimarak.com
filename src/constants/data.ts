@@ -1,4 +1,4 @@
-import { NavItem } from 'types';
+
 
 export type Product = {
   photo_url: string;
@@ -26,7 +26,7 @@ export type Shop = {
   description: string;
 };
 //Info: The following data is used for the sidebar navigation and Cmd K bar.
-export const navItems: NavItem[] = [
+export const navItems: any[] = [
   {
     title: 'Dashboard',
     url: '/dashboard/overview',
