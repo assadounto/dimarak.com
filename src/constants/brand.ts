@@ -25,11 +25,11 @@ export const brand = {
 
 export const logos = {
   wordmark: {
-    light: "/brand/logos/wordmark-light.svg",
-    dark: "/brand/logos/wordmark-dark.svg",
+    light: "/logos/mark.svg",
+    dark: "/logos/mark.svg",
   },
   mark: {
-    light: "/brand/logos/mark.svg",
+    light: "/logos/mark.svg",
   },
 } as const;
 

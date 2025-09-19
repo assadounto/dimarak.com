@@ -13,7 +13,6 @@ import { Testimonials } from "@/components/home/Testimonials";
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      
       <Hero />
       <Services />
       <Solutions />
@@ -24,7 +23,6 @@ export default function HomePage() {
       <Testimonials />
       <Pricing />
       <FAQ />
-      <Contact />
     </div>
   );
 }
