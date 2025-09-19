@@ -1,361 +1,361 @@
-import { title } from 'node:process';
+import { title } from "node:process";
 
 const homeDecor = [
   {
-    title: '',
+    title: "",
     items: [
-      'Home & Decor',
-      'Kitchen & Dining',
-      'Furniture & Cushions',
-      'Bedding & Linens',
-      'Curtains & Rugs Bathroom'
-    ]
+      "Home & Decor",
+      "Kitchen & Dining",
+      "Furniture & Cushions",
+      "Bedding & Linens",
+      "Curtains & Rugs Bathroom",
+    ],
   },
   {
-    title: '',
+    title: "",
     items: [
-      'Essentials Lighting & Candles',
-      'Storage & Decorative Vessels Games',
-      'Decorative',
-      'Household linens',
-      'Stationery'
-    ]
+      "Essentials Lighting & Candles",
+      "Storage & Decorative Vessels Games",
+      "Decorative",
+      "Household linens",
+      "Stationery",
+    ],
   },
   {
-    title: '',
+    title: "",
     items: [
-      'Kids Decoration',
-      'Art & Culture',
-      'Paintings & Visual Art',
-      'Sculptures & Statues',
-      'Traditional Masks & Ceremonial Objects'
-    ]
+      "Kids Decoration",
+      "Art & Culture",
+      "Paintings & Visual Art",
+      "Sculptures & Statues",
+      "Traditional Masks & Ceremonial Objects",
+    ],
   },
   {
-    title: '',
+    title: "",
     items: [
-      'Literature & Written Works',
-      'Musical Instruments',
-      'Mosaic Works',
-      'Art Photography',
-      'Ceramics & Artisan Pottery'
-    ]
-  }
+      "Literature & Written Works",
+      "Musical Instruments",
+      "Mosaic Works",
+      "Art Photography",
+      "Ceramics & Artisan Pottery",
+    ],
+  },
 ];
 const menCategory = [
   {
-    title: '',
+    title: "",
     items: [
-      'Men’s Traditional Attire',
-      'T-Shirts, Tops & Tank Tops',
-      'Co-Ord Sets',
-      'Jackets & Coats',
-      'Suits',
-      'Dress Shirts',
-      'Tunics',
-      'Polo Shirts'
-    ]
+      "Men’s Traditional Attire",
+      "T-Shirts, Tops & Tank Tops",
+      "Co-Ord Sets",
+      "Jackets & Coats",
+      "Suits",
+      "Dress Shirts",
+      "Tunics",
+      "Polo Shirts",
+    ],
   },
   {
-    title: '',
+    title: "",
     items: [
-      'Knitwear & Vests',
-      'Shorts',
-      'Trousers & Pants',
-      'Swimwear',
-      'Boxers & Underwear',
-      'Jumpsuits & Overalls'
-    ]
-  }
+      "Knitwear & Vests",
+      "Shorts",
+      "Trousers & Pants",
+      "Swimwear",
+      "Boxers & Underwear",
+      "Jumpsuits & Overalls",
+    ],
+  },
 ];
 const kidCategory = [
   {
-    title: '',
+    title: "",
     items: [
-      'Toys & Games',
+      "Toys & Games",
       "Girls' Clothing",
-      'Baby Clothing',
-      'Children’s Accessories',
-      'Kids Jackets & Outerwear',
-      'Children’s Footwear'
-    ]
-  }
+      "Baby Clothing",
+      "Children’s Accessories",
+      "Kids Jackets & Outerwear",
+      "Children’s Footwear",
+    ],
+  },
 ];
 const beautyCategory = [
   {
-    title: '',
+    title: "",
     items: [
-      'Hair Care',
-      'Fragrances',
-      'Skincare',
-      'Facial Care',
-      'Bath & Body',
-      'Essential Oils'
-    ]
+      "Hair Care",
+      "Fragrances",
+      "Skincare",
+      "Facial Care",
+      "Bath & Body",
+      "Essential Oils",
+    ],
   },
   {
-    title: '',
+    title: "",
     items: [
-      'Men’s Grooming',
-      'Beauty Accessories',
-      'Gift & Beauty Sets',
-      'Makeup & Cosmetics',
-      'Nail Care'
-    ]
-  }
+      "Men’s Grooming",
+      "Beauty Accessories",
+      "Gift & Beauty Sets",
+      "Makeup & Cosmetics",
+      "Nail Care",
+    ],
+  },
 ];
 const fabricsCategory = [
   {
-    title: '',
+    title: "",
     items: [
-      'All Fabrics',
-      'Ankara & Wax Prints',
-      'Silk, Chiffon & Stretch Fabrics',
-      'Bazin',
-      'Kente',
-      'Adire, Indigo & Batik'
-    ]
+      "All Fabrics",
+      "Ankara & Wax Prints",
+      "Silk, Chiffon & Stretch Fabrics",
+      "Bazin",
+      "Kente",
+      "Adire, Indigo & Batik",
+    ],
   },
   {
-    title: '',
+    title: "",
     items: [
-      'Bogolan (Mud Cloth)',
-      'Other Woven Textiles',
-      'Ndop',
-      'Dashiki Prints',
-      'Addis Ababa Weaves'
-    ]
-  }
+      "Bogolan (Mud Cloth)",
+      "Other Woven Textiles",
+      "Ndop",
+      "Dashiki Prints",
+      "Addis Ababa Weaves",
+    ],
+  },
 ];
 const jewelryCategory = [
   {
-    title: '',
+    title: "",
     items: [
-      'All Jewelry',
-      'Earrings',
-      'Rings',
-      'Bracelets',
-      'Necklaces',
-      'Body Jewelry'
-    ]
+      "All Jewelry",
+      "Earrings",
+      "Rings",
+      "Bracelets",
+      "Necklaces",
+      "Body Jewelry",
+    ],
   },
   {
-    title: '',
-    items: ['Watches', 'Brooches, Badges & Pins', 'Tie Clips', 'Cufflinks']
-  }
+    title: "",
+    items: ["Watches", "Brooches, Badges & Pins", "Tie Clips", "Cufflinks"],
+  },
 ];
 const womenCategory = [
   {
-    title: '',
+    title: "",
     items: [
-      'All Women',
-      'Dresses',
-      '2 pieces set',
-      'Jackets amd Coats',
-      'House clothing',
-      'Jumpsuits and Overalls',
-      'Skirts'
-    ]
+      "All Women",
+      "Dresses",
+      "2 pieces set",
+      "Jackets amd Coats",
+      "House clothing",
+      "Jumpsuits and Overalls",
+      "Skirts",
+    ],
   },
   {
-    title: '',
+    title: "",
     items: [
-      'Tops',
-      'Tunics',
-      'Trousers',
-      'Tradition clothing',
-      'T-shirts',
-      'Swimsuits'
-    ]
+      "Tops",
+      "Tunics",
+      "Trousers",
+      "Tradition clothing",
+      "T-shirts",
+      "Swimsuits",
+    ],
   },
   {
-    title: '',
+    title: "",
     items: [
-      'Shirts',
-      'Waistcoats and Sweeters',
-      'Suits',
-      'Activewear',
-      'Lingerie',
-      'Shorts'
-    ]
-  }
+      "Shirts",
+      "Waistcoats and Sweeters",
+      "Suits",
+      "Activewear",
+      "Lingerie",
+      "Shorts",
+    ],
+  },
 ];
 const bagsCategory = [
   {
-    title: '',
+    title: "",
     items: [
-      ' Backpacks',
-      'Handbags',
-      'Belt Bags & Waist Packs',
-      'Shoulder Bags',
-      'Cosmetic & Toiletry Cases',
-      'Tote & Beach Bags'
-    ]
+      " Backpacks",
+      "Handbags",
+      "Belt Bags & Waist Packs",
+      "Shoulder Bags",
+      "Cosmetic & Toiletry Cases",
+      "Tote & Beach Bags",
+    ],
   },
   {
-    title: '',
+    title: "",
     items: [
-      'Clutch Bags',
-      'Luggage & Travel Bags',
-      'Wallets & Small Leather Goods',
-      'Purses',
-      'Sports & Duffel Bags',
-      'Diaper & Baby Bags'
-    ]
-  }
+      "Clutch Bags",
+      "Luggage & Travel Bags",
+      "Wallets & Small Leather Goods",
+      "Purses",
+      "Sports & Duffel Bags",
+      "Diaper & Baby Bags",
+    ],
+  },
 ];
 const accessoryCategory = [
   {
-    title: '',
+    title: "",
     items: [
-      'Bags & Bag Accessories',
-      'Sunglasses & Eyewear',
-      'Hair Accessories',
-      'Craft Supplies & Miscellaneous',
-      'Mobile Phones & Cases',
-      'Customization Services'
-    ]
+      "Bags & Bag Accessories",
+      "Sunglasses & Eyewear",
+      "Hair Accessories",
+      "Craft Supplies & Miscellaneous",
+      "Mobile Phones & Cases",
+      "Customization Services",
+    ],
   },
   {
-    title: '',
+    title: "",
     items: [
-      'Laptop Cases & Holders',
-      'Makeup & Beauty Products',
-      'Gloves, Mittens, Sleeves & Gaiters',
-      'Hand Fans',
-      'Children’s Toys',
-      'Scarves & Shawls'
-    ]
+      "Laptop Cases & Holders",
+      "Makeup & Beauty Products",
+      "Gloves, Mittens, Sleeves & Gaiters",
+      "Hand Fans",
+      "Children’s Toys",
+      "Scarves & Shawls",
+    ],
   },
   {
-    title: '',
+    title: "",
     items: [
-      'Headwraps & Headbands',
-      'Umbrellas',
-      'Belts',
-      'Stationery',
-      'Automotive Accessories',
-      'Face Masks',
-      'Bow Ties'
-    ]
+      "Headwraps & Headbands",
+      "Umbrellas",
+      "Belts",
+      "Stationery",
+      "Automotive Accessories",
+      "Face Masks",
+      "Bow Ties",
+    ],
   },
   {
-    title: '',
+    title: "",
     items: [
-      'Keychains',
-      'Compact Mirrors',
-      'Neckties',
-      'Handkerchiefs',
-      'Detachable Collars',
-      'Suspenders'
-    ]
-  }
+      "Keychains",
+      "Compact Mirrors",
+      "Neckties",
+      "Handkerchiefs",
+      "Detachable Collars",
+      "Suspenders",
+    ],
+  },
 ];
 const collections = [
   {
-    title: '',
+    title: "",
     items: [
-      'New Drops',
-      'Prom edit',
-      'Festivals ',
-      'Spring Drops ',
-      'Summer',
-      'Cowrie',
-      'Accessories '
-    ]
+      "New Drops",
+      "Prom edit",
+      "Festivals ",
+      "Spring Drops ",
+      "Summer",
+      "Cowrie",
+      "Accessories ",
+    ],
   },
   {
-    title: '',
+    title: "",
     items: [
-      'Sunshine',
-      'Accessories ',
-      'Beach Mode: On',
-      'Hot Steps',
-      'Wedding Style ',
-      'Maasaï sandals'
-    ]
-  }
+      "Sunshine",
+      "Accessories ",
+      "Beach Mode: On",
+      "Hot Steps",
+      "Wedding Style ",
+      "Maasaï sandals",
+    ],
+  },
 ];
 
 export const categories = [
   {
-    name: 'COLLECTIONS',
+    name: "COLLECTIONS",
     subcategories: collections.map((subcategory) => ({
       name: subcategory.title,
       link: `/category/${subcategory?.title}`,
-      items: subcategory.items
-    }))
+      items: subcategory.items,
+    })),
   },
   {
-    name: 'HOME & ARTS',
+    name: "HOME & ARTS",
     subcategories: homeDecor.map((subcategory) => ({
       name: subcategory.title,
       link: `/category/${subcategory?.title}`,
-      items: subcategory.items
-    }))
+      items: subcategory.items,
+    })),
   },
   {
-    name: 'BAGS',
+    name: "BAGS",
     subcategories: bagsCategory.map((subcategory) => ({
       name: subcategory.title,
       link: `/category/${subcategory?.title}`,
-      items: subcategory.items
-    }))
+      items: subcategory.items,
+    })),
   },
   {
-    name: 'WOMEN',
+    name: "WOMEN",
     subcategories: womenCategory.map((subcategory) => ({
       name: subcategory.title,
       link: `/category/${subcategory?.title}`,
-      items: subcategory.items
-    }))
+      items: subcategory.items,
+    })),
   },
   {
-    name: 'JEWELRY',
+    name: "JEWELRY",
     subcategories: jewelryCategory.map((subcategory) => ({
       name: subcategory.title,
       link: `/category/${subcategory?.title}`,
-      items: subcategory.items
-    }))
+      items: subcategory.items,
+    })),
   },
   {
-    name: 'FABRICS',
+    name: "FABRICS",
     subcategories: fabricsCategory.map((subcategory) => ({
       name: subcategory.title,
       link: `/category/${subcategory?.title}`,
-      items: subcategory.items
-    }))
+      items: subcategory.items,
+    })),
   },
   {
-    name: 'ALL BEAUTY & HAIR',
+    name: "ALL BEAUTY & HAIR",
     subcategories: beautyCategory.map((subcategory) => ({
       name: subcategory.title,
       link: `/category/${subcategory?.title}`,
-      items: subcategory.items
-    }))
+      items: subcategory.items,
+    })),
   },
   {
-    name: 'ACCESSORIES',
+    name: "ACCESSORIES",
     subcategories: accessoryCategory.map((subcategory) => ({
       name: subcategory.title,
       link: `/category/${subcategory?.title}`,
-      items: subcategory.items
-    }))
+      items: subcategory.items,
+    })),
   },
   {
-    name: 'KIDS',
+    name: "KIDS",
     subcategories: kidCategory.map((subcategory) => ({
       name: subcategory.title,
       link: `/category/${subcategory?.title}`,
-      items: subcategory.items
-    }))
+      items: subcategory.items,
+    })),
   },
   {
-    name: 'MEN',
+    name: "MEN",
     subcategories: menCategory.map((subcategory) => ({
       name: subcategory.title,
       link: `/category/${subcategory?.title}`,
-      items: subcategory.items
-    }))
-  }
+      items: subcategory.items,
+    })),
+  },
 ];

@@ -3,9 +3,16 @@
 @tailwind utilities;
 
 /* helpers (unchanged) */
-.scrollbar-hide::-webkit-scrollbar { display: none; }
-.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-.overflow-hidden { overflow: hidden; }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
 
 /* =========================
    DIMARAK BRAND THEME
@@ -26,11 +33,11 @@
     --input: 18 22% 86%;
 
     /* Brand — PRIMARY = #FF4223 */
-    --primary: 8 100% 57%;           /* 🔥 Dimarak Orange-Red (FF4223) */
+    --primary: 8 100% 57%; /* 🔥 Dimarak Orange-Red (FF4223) */
     --primary-foreground: 0 0% 100%;
 
     /* Secondary — cool counterpoint to the heat of primary */
-    --secondary: 188 100% 50%;        /* ⚡ Electric Cyan */
+    --secondary: 188 100% 50%; /* ⚡ Electric Cyan */
     --secondary-foreground: 0 0% 100%;
 
     /* Accent — punchy lime for highlights/CTAs */
@@ -46,11 +53,11 @@
     --radius: 0.8rem;
 
     /* Charts — high-chroma set that plays well with the brand */
-    --chart-1: 8 100% 57%;    /* primary */
-    --chart-2: 188 100% 50%;  /* cyan */
-    --chart-3: 46 96% 54%;    /* amber */
-    --chart-4: 142 72% 44%;   /* green */
-    --chart-5: 326 86% 62%;   /* hot pink */
+    --chart-1: 8 100% 57%; /* primary */
+    --chart-2: 188 100% 50%; /* cyan */
+    --chart-3: 46 96% 54%; /* amber */
+    --chart-4: 142 72% 44%; /* green */
+    --chart-5: 326 86% 62%; /* hot pink */
   }
 
   .dark {
@@ -89,14 +96,13 @@
     --chart-5: 326 90% 66%;
   }
 
-  * { @apply border-border; }
-  body { @apply box-border bg-background text-foreground; }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply box-border bg-background text-foreground;
+  }
 }
-
-
-
-
-
 
 /* Shadows & misc utilities (unchanged) */
 @layer utilities {
@@ -110,12 +116,22 @@
       0 4px 6px rgba(0, 0, 0, 0.2),
       0 5px 15px rgba(0, 0, 0, 0.4);
   }
-  .hover-elevation-dark { transition: background-color 0.2s ease; }
-  .hover-elevation-dark:hover { background-color: rgba(255, 255, 255, 0.03); }
+  .hover-elevation-dark {
+    transition: background-color 0.2s ease;
+  }
+  .hover-elevation-dark:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+  }
 
   /* viewport-safe heights */
-  .min-h-screen { min-height: 100vh; min-height: 100dvh; }
-  .h-screen { height: 100vh; height: 100dvh; }
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  .h-screen {
+    height: 100vh;
+    height: 100dvh;
+  }
 
   /* Brand gradients using new tokens */
   .bg-brand-gradient {

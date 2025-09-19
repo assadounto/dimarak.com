@@ -1,4 +1,4 @@
-import { UserType } from './user_type';
+import { UserType } from "./user_type";
 
 export type ProductType = {
   id: string;

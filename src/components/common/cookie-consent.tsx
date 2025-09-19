@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import * as React from "react";
 import { Button } from "@/components/ui/button";
@@ -16,11 +16,7 @@ import {
   defaultConsent,
   type ConsentMap,
 } from "@/constants/cookies";
-import {
-  getConsentClient,
-  setConsentClient,
-
-} from "@/lib/consent";
+import { getConsentClient, setConsentClient } from "@/lib/consent";
 
 export function CookieConsentBanner() {
   const [open, setOpen] = React.useState(false);

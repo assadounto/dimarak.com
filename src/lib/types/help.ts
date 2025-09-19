@@ -19,45 +19,45 @@ export type HelpArticle = {
 
 export const HELP_CATEGORIES: HelpCategory[] = [
   {
-    slug: 'getting-started',
-    title: 'Getting Started',
-    description: 'New to the platform? Start here.'
+    slug: "getting-started",
+    title: "Getting Started",
+    description: "New to the platform? Start here.",
   },
   {
-    slug: 'selling',
-    title: 'Selling',
-    description: 'Products, listings, pricing, promotions.'
+    slug: "selling",
+    title: "Selling",
+    description: "Products, listings, pricing, promotions.",
   },
   {
-    slug: 'orders-shipping',
-    title: 'Orders & Shipping',
-    description: 'Fulfill, ship, track, and deliver.'
+    slug: "orders-shipping",
+    title: "Orders & Shipping",
+    description: "Fulfill, ship, track, and deliver.",
   },
   {
-    slug: 'payments-payouts',
-    title: 'Payments & Payouts',
-    description: 'Accept payments and receive payouts.'
+    slug: "payments-payouts",
+    title: "Payments & Payouts",
+    description: "Accept payments and receive payouts.",
   },
   {
-    slug: 'account-security',
-    title: 'Account & Security',
-    description: 'Login, verification, privacy, and safety.'
+    slug: "account-security",
+    title: "Account & Security",
+    description: "Login, verification, privacy, and safety.",
   },
   {
-    slug: 'policies',
-    title: 'Policies',
-    description: 'Terms, returns, disputes and compliance.'
-  }
+    slug: "policies",
+    title: "Policies",
+    description: "Terms, returns, disputes and compliance.",
+  },
 ];
 
 export const HELP_ARTICLES: HelpArticle[] = [
   {
-    slug: 'create-your-shop',
-    title: 'Create your shop in minutes',
+    slug: "create-your-shop",
+    title: "Create your shop in minutes",
     excerpt:
-      'Open a storefront, upload a logo, and publish your first product.',
-    category: 'getting-started',
-    updated_at: '2025-08-28T10:00:00Z',
+      "Open a storefront, upload a logo, and publish your first product.",
+    category: "getting-started",
+    updated_at: "2025-08-28T10:00:00Z",
     read_minutes: 4,
     content_html: `
       <h2>Step 1 — Create your shop</h2>
@@ -67,14 +67,14 @@ export const HELP_ARTICLES: HelpArticle[] = [
       <h2>Step 3 — Connect payouts</h2>
       <p>Set bank or mobile money in Dashboard → Payouts.</p>
     `,
-    related: ['connect-payouts', 'add-products']
+    related: ["connect-payouts", "add-products"],
   },
   {
-    slug: 'add-products',
-    title: 'Add and manage products',
-    excerpt: 'Photos, pricing, stock, and categories.',
-    category: 'selling',
-    updated_at: '2025-08-26T10:00:00Z',
+    slug: "add-products",
+    title: "Add and manage products",
+    excerpt: "Photos, pricing, stock, and categories.",
+    category: "selling",
+    updated_at: "2025-08-26T10:00:00Z",
     read_minutes: 5,
     content_html: `
       <h2>Product essentials</h2>
@@ -85,14 +85,14 @@ export const HELP_ARTICLES: HelpArticle[] = [
       </ul>
       <p>Use variants for sizes/colors where applicable.</p>
     `,
-    related: ['optimize-listings', 'create-your-shop']
+    related: ["optimize-listings", "create-your-shop"],
   },
   {
-    slug: 'ship-orders',
-    title: 'Ship orders like a pro',
-    excerpt: 'Packaging, labels, and handoff to carrier.',
-    category: 'orders-shipping',
-    updated_at: '2025-08-30T10:00:00Z',
+    slug: "ship-orders",
+    title: "Ship orders like a pro",
+    excerpt: "Packaging, labels, and handoff to carrier.",
+    category: "orders-shipping",
+    updated_at: "2025-08-30T10:00:00Z",
     read_minutes: 6,
     content_html: `
       <h2>Fulfillment flow</h2>
@@ -103,14 +103,14 @@ export const HELP_ARTICLES: HelpArticle[] = [
       </ol>
       <p>Keep buyers informed with proactive updates.</p>
     `,
-    related: ['order-statuses', 'returns-refunds']
+    related: ["order-statuses", "returns-refunds"],
   },
   {
-    slug: 'connect-payouts',
-    title: 'Connect payouts (Bank or Mobile Money)',
-    excerpt: 'Verify your payout details to get paid on time.',
-    category: 'payments-payouts',
-    updated_at: '2025-08-24T10:00:00Z',
+    slug: "connect-payouts",
+    title: "Connect payouts (Bank or Mobile Money)",
+    excerpt: "Verify your payout details to get paid on time.",
+    category: "payments-payouts",
+    updated_at: "2025-08-24T10:00:00Z",
     read_minutes: 3,
     content_html: `
       <h2>Bank transfer</h2>
@@ -118,14 +118,14 @@ export const HELP_ARTICLES: HelpArticle[] = [
       <h2>Mobile Money</h2>
       <p>Choose provider and add your MoMo number. Verify via OTP.</p>
     `,
-    related: ['create-your-shop']
+    related: ["create-your-shop"],
   },
   {
-    slug: 'account-safety',
-    title: 'Keep your account secure',
-    excerpt: '2FA, strong passwords, and safe devices.',
-    category: 'account-security',
-    updated_at: '2025-08-21T10:00:00Z',
+    slug: "account-safety",
+    title: "Keep your account secure",
+    excerpt: "2FA, strong passwords, and safe devices.",
+    category: "account-security",
+    updated_at: "2025-08-21T10:00:00Z",
     read_minutes: 3,
     content_html: `
       <h2>Best practices</h2>
@@ -134,20 +134,20 @@ export const HELP_ARTICLES: HelpArticle[] = [
         <li>Use a password manager</li>
         <li>Review devices regularly</li>
       </ul>
-    `
+    `,
   },
   {
-    slug: 'order-statuses',
-    title: 'Order statuses explained',
-    excerpt: 'Pending → Paid → Processing → Shipped → Delivered.',
-    category: 'orders-shipping',
-    updated_at: '2025-08-22T10:00:00Z',
+    slug: "order-statuses",
+    title: "Order statuses explained",
+    excerpt: "Pending → Paid → Processing → Shipped → Delivered.",
+    category: "orders-shipping",
+    updated_at: "2025-08-22T10:00:00Z",
     read_minutes: 2,
     content_html: `
       <p>Each step updates the buyer and seller with clear expectations.</p>
     `,
-    related: ['ship-orders']
-  }
+    related: ["ship-orders"],
+  },
 ];
 
 export function getCategories() {
@@ -156,7 +156,7 @@ export function getCategories() {
 
 export function getArticles({
   q,
-  category
+  category,
 }: {
   q?: string;
   category?: string;
@@ -168,8 +168,8 @@ export function getArticles({
     list = list.filter(
       (a) =>
         a.title.toLowerCase().includes(qq) ||
-        (a.excerpt || '').toLowerCase().includes(qq) ||
-        a.content_html.toLowerCase().includes(qq)
+        (a.excerpt || "").toLowerCase().includes(qq) ||
+        a.content_html.toLowerCase().includes(qq),
     );
   }
   // sort by updated desc

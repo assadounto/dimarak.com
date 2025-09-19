@@ -1,5 +1,5 @@
-'use client';
-import { Button } from '../button';
+"use client";
+import { Button } from "../button";
 
 type DataTableResetFilterProps = {
   isFilterActive: boolean;
@@ -8,12 +8,12 @@ type DataTableResetFilterProps = {
 
 export function DataTableResetFilter({
   isFilterActive,
-  onReset
+  onReset,
 }: DataTableResetFilterProps) {
   return (
     <>
       {isFilterActive ? (
-        <Button variant='outline' onClick={onReset}>
+        <Button variant="outline" onClick={onReset}>
           Reset Filters
         </Button>
       ) : null}

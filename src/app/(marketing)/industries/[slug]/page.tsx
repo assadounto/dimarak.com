@@ -22,7 +22,7 @@ export default function IndustryDetail({
   const i = getIndustryBySlug(params.slug);
   if (!i) return notFound();
   const relevantSolutions = solutions.filter((s) =>
-    i.solutionSlugs.includes(s.slug)
+    i.solutionSlugs.includes(s.slug),
   );
 
   return (

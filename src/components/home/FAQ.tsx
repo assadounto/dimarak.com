@@ -1,5 +1,10 @@
 import { SectionHeading } from "../common/SectionHeader";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 const faqs = [
   {
     q: "Do you offer enterprise support & SLAs?",
@@ -14,7 +19,6 @@ const faqs = [
     a: "We run a short discovery to align scope, success metrics, and timeline, then propose an execution plan.",
   },
 ];
-
 
 export function FAQ() {
   return (

@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 interface TrendingHeaderProps {
   title: string;
@@ -19,7 +19,7 @@ const ToggleHeader: React.FC<TrendingHeaderProps> = ({
       {isGridView !== undefined && setIsGridView && (
         <div className="flex items-center gap-4 absolute right-4">
           <Image
-            src={isGridView ? '/hamburger.svg' : '/hamburgerOrange.svg'}
+            src={isGridView ? "/hamburger.svg" : "/hamburgerOrange.svg"}
             alt="Toggle to Row View"
             width={24}
             height={24}
@@ -27,7 +27,7 @@ const ToggleHeader: React.FC<TrendingHeaderProps> = ({
             className="cursor-pointer"
           />
           <Image
-            src={isGridView ? '/OrangeIcon.svg' : '/WhiteIcon.svg'}
+            src={isGridView ? "/OrangeIcon.svg" : "/WhiteIcon.svg"}
             alt="Toggle to Grid View"
             width={24}
             height={24}

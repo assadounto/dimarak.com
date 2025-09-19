@@ -1,18 +1,18 @@
 // app/layout.tsx
-import { auth } from '@/lib/auth';
-import Providers from '@/components/layout/providers';
-import { Toaster } from '@/components/ui/sonner';
-import type { Metadata } from 'next';
-import { NuqsAdapter } from 'nuqs/adapters/next/app';
-import { Lato } from 'next/font/google';
-import NextTopLoader from 'nextjs-toploader';
-import './globals.css';
-import HelpFab from '@/components/help/HelpFab';
+import { auth } from "@/lib/auth";
+import Providers from "@/components/layout/providers";
+import { Toaster } from "@/components/ui/sonner";
+import type { Metadata } from "next";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { Lato } from "next/font/google";
+import NextTopLoader from "nextjs-toploader";
+import "./globals.css";
+import HelpFab from "@/components/help/HelpFab";
 
-import { AnalyticsLoader } from '@/components/common/analytics-loader';
-import { CookieConsentBanner } from '@/components/common/cookie-consent';
-import SiteHeader from '@/components/navigation/site-header';
-import { SiteFooter } from '@/components/navigation/site-footer';
+import { AnalyticsLoader } from "@/components/common/analytics-loader";
+import { CookieConsentBanner } from "@/components/common/cookie-consent";
+import SiteHeader from "@/components/navigation/site-header";
+import { SiteFooter } from "@/components/navigation/site-footer";
 export const metadata = {
   title: "Dimarak",
   description:
@@ -20,18 +20,18 @@ export const metadata = {
 };
 
 const lato = Lato({
-  subsets: ['latin'],
-  weight: ['400', '700', '900'],
-  display: 'swap'
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+  display: "swap",
 });
 
 export default async function RootLayout({
-  children
+  children,
 }: {
   children: React.ReactNode;
 }) {
   const session = await auth();
-  console.log(session, 'session');
+  console.log(session, "session");
 
   return (
     <html lang="en" className={`${lato.className}`} suppressHydrationWarning>

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 type WishItem = {
   productId: string;
@@ -34,8 +34,8 @@ export const useWishlist = create<WishlistState>()(
         }),
       has: (id) => Boolean(get().items[id]),
       list: () => Object.values(get().items),
-      clear: () => set({ items: {} })
+      clear: () => set({ items: {} }),
     }),
-    { name: 'wishlist' }
-  )
+    { name: "wishlist" },
+  ),
 );

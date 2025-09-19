@@ -1,7 +1,7 @@
 // =============================================================
 // app/(marketing)/solutions/page.tsx — Solutions index
 // =============================================================
-"use client"
+"use client";
 
 import * as React from "react";
 import Link from "next/link";

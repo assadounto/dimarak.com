@@ -22,7 +22,7 @@ export function getConsentClient() {
 
 export function setConsentClient(
   consent: import("@/constants/cookies").ConsentMap,
-  days = 180
+  days = 180,
 ) {
   if (typeof document === "undefined") return;
   const json = encodeURIComponent(JSON.stringify(consent));

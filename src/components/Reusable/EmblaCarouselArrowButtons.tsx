@@ -2,11 +2,11 @@ import React, {
   ComponentPropsWithRef,
   useCallback,
   useEffect,
-  useState
-} from 'react';
-import { EmblaCarouselType } from 'embla-carousel';
-import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5';
-import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
+  useState,
+} from "react";
+import { EmblaCarouselType } from "embla-carousel";
+import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 // Type definition for our custom hook's return values
 type UsePrevNextButtonsType = {
@@ -21,7 +21,7 @@ type UsePrevNextButtonsType = {
  * It manages button enable/disable states and handles button clicks.
  */
 export const usePrevNextButtons = (
-  emblaApi: EmblaCarouselType | undefined // Carousel API to control scrolling
+  emblaApi: EmblaCarouselType | undefined, // Carousel API to control scrolling
 ): UsePrevNextButtonsType => {
   // States to keep track of button disabled statuses
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
@@ -53,7 +53,7 @@ export const usePrevNextButtons = (
     onSelect(emblaApi);
 
     // Attach `onSelect` to carousel events to update button states on each interaction
-    emblaApi.on('reInit', onSelect).on('select', onSelect);
+    emblaApi.on("reInit", onSelect).on("select", onSelect);
   }, [emblaApi, onSelect]);
 
   // Return an object containing the button states and click handlers
@@ -61,13 +61,13 @@ export const usePrevNextButtons = (
     prevBtnDisabled,
     nextBtnDisabled,
     onPrevButtonClick,
-    onNextButtonClick
+    onNextButtonClick,
   };
 };
 
 // Shared type for button components to inherit HTML button properties
-type CarouselButtonProps = ComponentPropsWithRef<'button'> & {
-  direction: 'prev' | 'next'; // Specifies button direction
+type CarouselButtonProps = ComponentPropsWithRef<"button"> & {
+  direction: "prev" | "next"; // Specifies button direction
 };
 
 /**
@@ -80,12 +80,12 @@ const CarouselButton: React.FC<CarouselButtonProps> = ({
   children,
   ...restProps
 }) => {
-  const Icon = direction === 'prev' ? BsChevronLeft : BsChevronRight;
+  const Icon = direction === "prev" ? BsChevronLeft : BsChevronRight;
 
   return (
     <button
-      className='flex size-10 cursor-pointer items-center justify-center rounded-full bg-white text-black duration-200 disabled:hidden'
-      type='button'
+      className="flex size-10 cursor-pointer items-center justify-center rounded-full bg-white text-black duration-200 disabled:hidden"
+      type="button"
       {...restProps} // Enables additional properties like disabled state
     >
       <Icon /> {/* Renders left or right icon based on direction prop */}

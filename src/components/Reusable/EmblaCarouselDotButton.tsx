@@ -2,9 +2,9 @@ import React, {
   ComponentPropsWithRef,
   useCallback,
   useEffect,
-  useState
-} from 'react';
-import { EmblaCarouselType } from 'embla-carousel';
+  useState,
+} from "react";
+import { EmblaCarouselType } from "embla-carousel";
 
 type UseDotButtonType = {
   selectedIndex: number; // Tracks the current slide index
@@ -16,7 +16,7 @@ type UseDotButtonType = {
 export const useDotButton = (
   // Carousel API instance from Embla and optional callback when dot is clicked
   emblaApi: EmblaCarouselType | undefined,
-  onButtonClick?: (emblaApi: EmblaCarouselType) => void
+  onButtonClick?: (emblaApi: EmblaCarouselType) => void,
 ): UseDotButtonType => {
   const [selectedIndex, setSelectedIndex] = useState(0); // State for the currently selected slide index
 
@@ -29,7 +29,7 @@ export const useDotButton = (
       emblaApi.scrollTo(index);
       if (onButtonClick) onButtonClick(emblaApi); // Trigger optional click event
     },
-    [emblaApi, onButtonClick]
+    [emblaApi, onButtonClick],
   );
 
   // Initialize snap positions (slide positions) for the carousel
@@ -50,14 +50,14 @@ export const useDotButton = (
     onSelect(emblaApi); // Set initial selected slide
 
     // Listen for carousel events to keep selectedIndex in sync with Embla's state
-    emblaApi.on('reInit', onInit).on('reInit', onSelect).on('select', onSelect);
+    emblaApi.on("reInit", onInit).on("reInit", onSelect).on("select", onSelect);
 
     // Cleanup: remove event listeners when component unmounts or emblaApi changes
     return () => {
       emblaApi
-        .off('reInit', onInit)
-        .off('reInit', onSelect)
-        .off('select', onSelect);
+        .off("reInit", onInit)
+        .off("reInit", onSelect)
+        .off("select", onSelect);
     };
   }, [emblaApi, onInit, onSelect]);
 
@@ -65,19 +65,19 @@ export const useDotButton = (
   return {
     selectedIndex,
     scrollSnaps,
-    onDotButtonClick
+    onDotButtonClick,
   };
 };
 
 // Define the props type for the DotButton component, extending button properties
-type PropType = ComponentPropsWithRef<'button'>;
+type PropType = ComponentPropsWithRef<"button">;
 
 // DotButton component to represent individual navigation dots for each slide
 export const DotButton: React.FC<PropType> = (props) => {
   const { children, ...restProps } = props;
 
   return (
-    <button type='button' {...restProps}>
+    <button type="button" {...restProps}>
       {children}
     </button>
   );

@@ -1,6 +1,6 @@
 // src/context/AuthContext/types.ts
-import { UserType } from '@/data_types/user_type';
-import { ProductType } from './product_type';
+import { UserType } from "@/data_types/user_type";
+import { ProductType } from "./product_type";
 
 export interface BrandType {
   id: string;
@@ -51,23 +51,23 @@ export interface AuthContextType {
     search?: string,
     page?: number,
     pageSize?: number,
-    forceRefresh?: boolean
+    forceRefresh?: boolean,
   ) => Promise<{ brands: BrandType[]; total: number }>;
 
   getMaterials: (
     search?: string,
     page?: number,
     pageSize?: number,
-    forceRefresh?: boolean
+    forceRefresh?: boolean,
   ) => Promise<{ materials: MaterialType[]; total: number }>;
 
   getCategories: (
     parentId?: number,
-    forceRefresh?: boolean
+    forceRefresh?: boolean,
   ) => Promise<{ categories: CategoryType[]; total: number }>;
   getSizes: (
     path: string,
-    forceRefresh?: boolean
+    forceRefresh?: boolean,
   ) => Promise<{ sizes: MaterialType[] }>;
   // Total count getters
   getBrandsTotal: () => number;
@@ -79,10 +79,10 @@ export interface AuthContextType {
     search?: string,
     page?: number,
     pageSize?: number,
-    forceRefresh?: boolean
+    forceRefresh?: boolean,
   ) => Promise<{ products: ProductType[]; total: number }>;
   refreshUserProducts: (
-    username: string
+    username: string,
   ) => Promise<{ products: ProductType[]; total: number }>;
   updateProductInCache: (updatedProduct: ProductType) => void;
   removeProductFromCache: (productId: string) => void;

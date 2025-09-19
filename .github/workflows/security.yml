@@ -18,9 +18,9 @@ jobs:
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
-      
+
       - name: Install dependencies
         run: npm install
 
       - name: Run security audit
-        run: npm audit  # For Node.js, adjust to your audit command
+        run: npm audit # For Node.js, adjust to your audit command

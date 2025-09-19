@@ -24,7 +24,6 @@ const testimonials: Testimonial[] = [
     name: "S. Boateng",
     title: "VP Eng, Fintech",
   },
-  
 ];
 
 export function Testimonials() {
@@ -48,7 +47,7 @@ export function Testimonials() {
           if (idx >= 0) setActive(idx);
         }
       },
-      { root: scroller, threshold: [0.55, 0.75, 0.9] }
+      { root: scroller, threshold: [0.55, 0.75, 0.9] },
     );
     slideRefs.current.forEach((el) => el && io.observe(el));
     return () => io.disconnect();

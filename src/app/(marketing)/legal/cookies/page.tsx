@@ -10,10 +10,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { Separator } from "@/components/ui/separator";
-import {  categories,
+import {
+  categories,
   cookieCatalog,
   defaultConsent,
-  type ConsentMap, } from "@/constants/cookies";
+  type ConsentMap,
+} from "@/constants/cookies";
 import {
   getConsentClient,
   setConsentClient,

@@ -149,7 +149,7 @@ export function CaseStudies() {
                   </div>
                 </CardContent>
               </Card>
-            )
+            ),
           )}
         </div>
 

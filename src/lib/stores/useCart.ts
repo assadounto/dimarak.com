@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { create } from 'zustand';
+import { create } from "zustand";
 
 export type CartItem = {
   id: string; // productId + (variant?) as unique key
@@ -18,7 +18,7 @@ type CartState = {
   open: () => void;
   close: () => void;
 
-  add: (item: Omit<CartItem, 'id'>) => void;
+  add: (item: Omit<CartItem, "id">) => void;
   remove: (id: string) => void;
   setQty: (id: string, q: number) => void;
   clear: () => void;
@@ -27,8 +27,8 @@ type CartState = {
   count: () => number;
 };
 
-function key(item: Omit<CartItem, 'id'>) {
-  return `${item.productId}${item.variant ? `__${item.variant}` : ''}`;
+function key(item: Omit<CartItem, "id">) {
+  return `${item.productId}${item.variant ? `__${item.variant}` : ""}`;
 }
 
 export const useCart = create<CartState>((set, get) => ({
@@ -44,14 +44,14 @@ export const useCart = create<CartState>((set, get) => ({
       if (existing) {
         return {
           items: state.items.map((i) =>
-            i.id === id ? { ...i, quantity: i.quantity + item.quantity } : i
+            i.id === id ? { ...i, quantity: i.quantity + item.quantity } : i,
           ),
-          isOpen: true
+          isOpen: true,
         };
       }
       return {
         items: [...state.items, { ...item, id }],
-        isOpen: true
+        isOpen: true,
       };
     }),
 
@@ -61,12 +61,12 @@ export const useCart = create<CartState>((set, get) => ({
   setQty: (id, q) =>
     set((state) => ({
       items: state.items.map((i) =>
-        i.id === id ? { ...i, quantity: Math.max(1, q) } : i
-      )
+        i.id === id ? { ...i, quantity: Math.max(1, q) } : i,
+      ),
     })),
 
   clear: () => set({ items: [] }),
 
   subtotal: () => get().items.reduce((sum, i) => sum + i.price * i.quantity, 0),
-  count: () => get().items.reduce((n, i) => n + i.quantity, 0)
+  count: () => get().items.reduce((n, i) => n + i.quantity, 0),
 }));

@@ -1,5 +1,5 @@
-import React from 'react';
-import SubContent from './subcontent';
+import React from "react";
+import SubContent from "./subcontent";
 
 interface DropdownMenuProps {
   subcategories: {
@@ -13,7 +13,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ subcategories }) => {
   const gridCols = `grid-cols-5`;
 
   return (
-    <div className='invisible fixed left-1/2 top-[140px] z-20 max-h-[600px] w-[1400px] -translate-x-1/2 overflow-y-auto bg-white px-8 py-6 pt-5 opacity-0 shadow-lg transition-all delay-300 duration-300 group-hover:visible group-hover:opacity-100'>
+    <div className="invisible fixed left-1/2 top-[140px] z-20 max-h-[600px] w-[1400px] -translate-x-1/2 overflow-y-auto bg-white px-8 py-6 pt-5 opacity-0 shadow-lg transition-all delay-300 duration-300 group-hover:visible group-hover:opacity-100">
       <div className={`grid pb-10 ${gridCols} gap-6`}>
         {subcategories.map((subcategory, index) => (
           <SubContent

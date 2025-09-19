@@ -28,7 +28,7 @@ export function Stack() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   const [tab, setTab] = React.useState<"all" | "cloud" | "comms" | "data">(
-    "all"
+    "all",
   );
   const filtered = tab === "all" ? STACK : STACK.filter((s) => s.cat === tab);
 

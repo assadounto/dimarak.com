@@ -22,7 +22,7 @@ import {
 
 function qs(params: Record<string, string | undefined>) {
   const entries = Object.entries(params).filter(
-    ([, v]) => v !== undefined && v !== ""
+    ([, v]) => v !== undefined && v !== "",
   ) as [string, string][];
   const s = new URLSearchParams(entries);
   return s.toString() ? `?${s.toString()}` : "";

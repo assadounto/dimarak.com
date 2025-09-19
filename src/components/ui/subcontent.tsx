@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface SubContentProps {
   title: string;
@@ -7,16 +7,16 @@ interface SubContentProps {
 
 const SubContent: React.FC<SubContentProps> = ({ title, items }) => {
   return (
-    <div className='max-w-[200px]'>
-      {' '}
+    <div className="max-w-[200px]">
+      {" "}
       {/* Increased width to 250px */}
-      <h4 className='mb-3 text-sm font-bold'>{title}</h4>
-      <ul className='space-y-2'>
+      <h4 className="mb-3 text-sm font-bold">{title}</h4>
+      <ul className="space-y-2">
         {items.map((item, index) => (
           <li key={index}>
             <a
-              href='#'
-              className='text-sm text-gray-700 hover:text-black hover:underline'
+              href="#"
+              className="text-sm text-gray-700 hover:text-black hover:underline"
             >
               {item}
             </a>
