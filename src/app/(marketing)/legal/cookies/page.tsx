@@ -22,11 +22,11 @@ import {
   resetConsentClient,
 } from "@/lib/consent";
 
-export const metadata = {
-  title: "Cookies & Preferences | Dimarak",
-  description:
-    "Manage your cookie preferences for Dimarak. Learn what we use and why.",
-};
+// export const metadata = {
+//   title: "Cookies & Preferences | Dimarak",
+//   description:
+//     "Manage your cookie preferences for Dimarak. Learn what we use and why.",
+// };
 
 export default function CookiesPage() {
   const [consent, setConsent] = React.useState<ConsentMap>(defaultConsent);
