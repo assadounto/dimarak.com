@@ -1,6 +1,7 @@
 {
   "extends": "next",
   "rules": {
+    "react/no-unescaped-entities": 0,
     "import/no-unresolved": [
       2,
       {
